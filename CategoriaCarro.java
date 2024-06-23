@@ -1,44 +1,44 @@
-public class CategoriaCarro {
+// Classe CategoriaCarro
+class CategoriaCarro {
+    private String nome;
+    private double precoBaseDiaria;
+    private String tipoSeguro;
 
-    private String idCategoria;
-    private String descricao;
-    private double precoBase;
-    
-  
-    public CategoriaCarro(String idCategoria, String descricao, double precoBase) {
-
-        this.idCategoria = idCategoria;
-        this.descricao = descricao;
-        this.precoBase = precoBase;
-        
+    public CategoriaCarro(String nome, double precoBaseDiaria, String tipoSeguro) {
+        this.nome = nome;
+        this.precoBaseDiaria = precoBaseDiaria;
+        this.tipoSeguro = tipoSeguro;
     }
 
-    public String getIdCategoria() {
-        return idCategoria;
+    // Getters e Setters
+    public String getNome() {
+        return nome;
     }
 
-    public String getDescricao() {
-        return descricao;
+    public void setNome(String nome) {
+        this.nome = nome;
     }
 
-    public double getPrecoBase() {
-        return precoBase;
+    public double getPrecoBaseDiaria() {
+        return precoBaseDiaria;
     }
 
-    public void setIdCategoria(String idCategoria) {
-        this.idCategoria = idCategoria;
+    public void setPrecoBaseDiaria(double precoBaseDiaria) {
+        this.precoBaseDiaria = precoBaseDiaria;
     }
 
-    public void setDescricao(String descricao) {
-        this.descricao = descricao;
+    public String getTipoSeguro() {
+        return tipoSeguro;
     }
 
-    public void setPrecoBase(double precoBase) {
-        this.precoBase = precoBase;
+    public void setTipoSeguro(String tipoSeguro) {
+        this.tipoSeguro = tipoSeguro;
     }
 
-    @Override
-    public String toString() {
-        return "CategoriaCarro{" + "idCategoria=" + idCategoria + ", descricao=" + descricao + ", precoBase=" + precoBase + "}";
+    // Funções adicionais
+    public double calcularPrecoTotal(int dias) {
+        // Lógica para calcular o preço total do aluguel incluindo seguro para o período especificado
+        double precoSeguro = 0.0; // Lógica para calcular o preço do seguro
+        return (precoBaseDiaria * dias) + precoSeguro;
     }
 }
